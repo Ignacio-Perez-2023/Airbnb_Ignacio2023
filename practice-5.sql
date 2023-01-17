@@ -1,5 +1,10 @@
 -- How many of each property type are there in Hyde Park?
 
+-- Note (IP) remember to use GROUP BY whenever you want to show only 1 row per type of property_type.
+-- We tried using SELECT DISTINCT but it didn't work when we wanted to add a second column with the count
+
+SELECT property_type, COUNT (id) FROM listings WHERE neighborhood = "Hyde Park" GROUP BY property_type;
+
 -- +-------------------------------------+----------+
 -- | Entire condominium (condo)          | 6        |
 -- | Entire guest suite                  | 1        |
